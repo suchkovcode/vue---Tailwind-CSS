@@ -28,7 +28,6 @@
       "lint-staged": "^13.2.3",
 
       "postcss": "^8.4.27",
-      "postcss-focus": "^7.0.0",
       "postcss-mq-keyframes": "^0.3.0",
       "postcss-sort-media-queries": "^5.2.0",
       "autoprefixer": "^10.4.14",
