@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 import { ViteFaviconsPlugin } from "vite-plugin-favicon2";
+import inspect from 'vite-plugin-inspect'
+import eslint from "vite-plugin-eslint";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 
@@ -10,7 +12,7 @@ export default defineConfig({
    cacheDir: "../.cache",
    build: {
       outDir: "../dist/",
-      manifest: true,
+      manifest: false,
    },
    resolve: {
       alias: {
@@ -22,9 +24,11 @@ export default defineConfig({
       open: true,
    },
    plugins: [
+      inspect(),
       vue(),
+      eslint(),
       ViteFaviconsPlugin({
-         logo: "src/assets/img/favicon.svg",
+         logo: "src/assets/img/svg/favicon.svg",
          inject: true,
          projectRoot: "./src/",
          outputPath: "static/",
