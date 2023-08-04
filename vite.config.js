@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import { ViteFaviconsPlugin } from "vite-plugin-favicon2";
-import inspect from 'vite-plugin-inspect'
+import { visualizer } from "rollup-plugin-visualizer";
+import inspect from "vite-plugin-inspect";
+import stylelint from "vite-plugin-stylelint";
 import eslint from "vite-plugin-eslint";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
@@ -24,18 +26,24 @@ export default defineConfig({
       open: true,
    },
    plugins: [
+      visualizer({
+         emitFile: true,
+         filename: "stats.html",
+      }),
       inspect(),
       vue(),
       eslint(),
       ViteFaviconsPlugin({
          logo: "src/assets/img/svg/favicon.svg",
          inject: true,
-         projectRoot: "./src/",
-         outputPath: "static/",
-         cache: true,
+         outputPath: "./static",
          favicons: {
+            appName: "Example",
+            appShortName: "Example",
+            appDescription: "Example",
+            start_url: "/",
             icons: {
-               android: true,
+               android: false,
                appleIcon: true,
                appleStartup: true,
                favicons: true,
