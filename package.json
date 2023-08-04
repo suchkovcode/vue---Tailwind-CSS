@@ -7,35 +7,51 @@
       "buld:dev": "vite",
       "build:prod": "vite build",
       "build:prev": "vite preview",
+      "build:postcss": "postcss dist/**/*.css --dir dist/assets"б
       "prepare": "husky install"
    },
    "lint-staged": {
-      "*.vue": "prettier . --write"
+      "*.vue": [
+         "prettier --write",
+         "stylelint --fix --color"
+      ]
    },
    "dependencies": {
       "axios": "^1.4.0",
       "pinia": "^2.1.6",
       "vue": "^3.3.4",
       "vue-router": "^4.2.4",
-      "@vueuse/core": "^10.3.0",
+      "@vueuse/core": "^10.3.0"
    },
    "devDependencies": {
-      "vite": "^4.4.7",
-      "@vitejs/plugin-vue": "^4.2.3",
-      "vite-plugin-favicon2": "^1.1.5",
+      "vite": "^4.4.8",
       "vite-plugin-eslint": "^1.8.1",
-      "vite-plugin-inspect": "^0.7.33",
+      "vite-plugin-favicon2": "^1.1.5",
+      "vite-plugin-inspect": "^0.7.35",
+      "vite-plugin-stylelint": "^4.3.0",
+      "@vitejs/plugin-vue": "^4.2.3",
 
-      "prettier": "^3.0.0",
-      "tailwindcss": "^3.3.3",
       "husky": "^8.0.3",
       "lint-staged": "^13.2.3",
+      "prettier": "^3.0.0",
+      "tailwindcss": "^3.3.3",
+      "rollup-plugin-visualizer": "^5.9.2",
 
-      "postcss-sort-media-queries": "^5.2.0",
+      "stylelint": "^15.10.2",
+      "stylelint-config-recommended-vue": "^1.5.0",
+      "stylelint-config-standard-scss": "^10.0.0",
+      "stylelint-order": "^6.0.3",
+      "@mapbox/stylelint-processor-arbitrary-tags": "^0.4.0",
+
+      "eslint": "^8.46.0",
+      "eslint-plugin-import": "^2.28.0",
+      "eslint-plugin-vue": "^9.16.1",
+
+      "postcss": "^8.4.27",
+      "postcss-cli": "^10.1.0",
+      "postcss-combine-duplicated-selectors": "^10.0.3",
+      "postcss-combine-media-query": "^1.0.1",
       "autoprefixer": "^10.4.14",
-
-      "eslint": "^8.45.0",
-      "eslint-plugin-import": "^2.27.5",
-      "eslint-plugin-vue": "^9.15.1"
+      "cssnano": "^6.0.1"
    }
 }
