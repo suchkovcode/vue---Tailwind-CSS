@@ -4,12 +4,17 @@ const routes = [
    {
       path: "/",
       name: "app",
-      component: () => import("null"),
+      component: () => import("@/pages/index.vue"),
+   },
+   {
+      path: "/:id",
+      name: "post",
+      component: () => import("@/pages/post.vue"),
    },
    {
       path: "/404",
       name: "404",
-      component: () => import("404"),
+      component: () => import("@/pages/error.vue"),
    },
    {
       path: "/:pathMatch(.*)*",
@@ -23,7 +28,7 @@ const router = createRouter({
    scrollBehavior() {
       return new Promise((resolve) => {
          setTimeout(() => {
-            resolve({ el: "#root", left: 0, top: 0, behavior: "smooth" });
+            resolve({ el: "#app", left: 0, top: 0, behavior: "smooth" });
          }, 200);
       });
    },
