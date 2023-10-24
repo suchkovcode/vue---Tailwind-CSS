@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-   content: ["./public/**/*.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
    important: false,
    theme: {
       screens: {
@@ -12,10 +12,14 @@ module.exports = {
          "2xl": "1536px",
       },
       fontFamily: {
-         roboto: ["Roboto, sans-serif"],
+         fira: ["Fira Sans, sans-serif"],
       },
       container: {
          center: true,
       },
    },
+
+   plugins: [
+      require("@tailwindcss/forms"),
+   ],
 };
