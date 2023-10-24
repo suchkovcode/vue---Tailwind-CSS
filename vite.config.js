@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import { ViteFaviconsPlugin } from "vite-plugin-favicon2";
 import { visualizer } from "rollup-plugin-visualizer";
 import inspect from "vite-plugin-inspect";
-import stylelint from "vite-plugin-stylelint";
 import eslint from "vite-plugin-eslint";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
